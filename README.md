@@ -1,4 +1,3 @@
-[README (3).md](https://github.com/user-attachments/files/25399264/README.3.md)
 # 📚 Spring Security & JWT 학습 프로젝트
 
 Spring Boot에서 **Bean 등록 방식부터 Spring Security 기반 로그인까지** 단계적으로 학습한 예제 프로젝트입니다.
@@ -11,7 +10,7 @@ Spring Boot에서 **Bean 등록 방식부터 Spring Security 기반 로그인까
 - Spring Boot
 - Spring Security
 - JWT 
-- JPA 
+- JPA / MySQL
 - Lombok
 - JUnit 5
 - Gradle
