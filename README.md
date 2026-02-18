@@ -10,8 +10,8 @@ Spring Boot에서 **Bean 등록 방식부터 Spring Security 기반 로그인까
 - Java 17
 - Spring Boot
 - Spring Security
-- JWT (jjwt)
-- JPA / H2
+- JWT 
+- JPA 
 - Lombok
 - JUnit 5
 - Gradle
