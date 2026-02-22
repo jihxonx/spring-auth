@@ -22,6 +22,16 @@ public class UserDetailsImpl implements UserDetails {
     }
 
     @Override
+    public String getPassword() {
+        return user.getPassword();
+    }
+
+    @Override
+    public String getUsername() {
+        return user.getUsername();
+    }
+
+    @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         UserRoleEnum role = user.getRole();
         String authority = role.getAuthority();
@@ -34,32 +44,22 @@ public class UserDetailsImpl implements UserDetails {
     }
 
     @Override
-    public String getPassword() {
-        return user.getPassword();
-    }
-
-    @Override
-    public String getUsername() {
-        return user.getUsername();
-    }
-
-    @Override
     public boolean isAccountNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isEnabled() {
-        return false;
+        return true;
     }
 }
