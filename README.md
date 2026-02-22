@@ -31,7 +31,7 @@ spring-auth/
 │   ├── ProductController.java       # @Secured, @AuthenticationPrincipal, @Valid 사용 예시
 │   └── UserController.java          # 회원가입 API
 ├── dto/
-│   ├── SignupRequestDto.java
+│   ├── SignupRequestDto.java         # @Pattern 정규식으로 이메일 검증
 │   ├── LoginRequestDto.java
 │   └── ProductRequestDto.java       # @Valid 검증 어노테이션 적용
 ├── entity/
@@ -105,7 +105,8 @@ spring-auth/
 - `@EnableMethodSecurity(securedEnabled = true)` — 메서드 레벨 보안 활성화
 - `@Secured(UserRoleEnum.Authority.ADMIN)` — ADMIN 역할만 접근 가능한 엔드포인트
 - `@AuthenticationPrincipal` — SecurityContext에서 현재 로그인 유저 정보 주입
-- `@Valid` + Bean Validation 어노테이션 (`@NotBlank`, `@Email`, `@Positive`, `@Size` 등) — 요청 DTO 검증
+- `@Valid` + Bean Validation 어노테이션 (`@NotBlank`, `@Pattern`, `@Positive`, `@Size` 등) — 요청 DTO 검증
+  - `SignupRequestDto` — `@Email` 대신 `@Pattern(regexp = "...")` 으로 이메일 형식을 직접 정규식으로 검증 (더 엄격한 유효성 제어)
 
 ---
 
@@ -143,5 +144,6 @@ spring-auth/
 - **`SessionCreationPolicy.STATELESS`** — 세션 없는 JWT 인증 구조
 - **`@Secured`** — 메서드 레벨 역할 기반 접근 제어
 - **`@AuthenticationPrincipal`** — 인증 유저 정보 주입
-- **`@Valid` / Bean Validation** — 요청 DTO 입력값 검증
+- **`@Valid` / Bean Validation** — 요청 DTO 입력값 검증 (`@Pattern`으로 직접 정규식 이메일 검증 포함)
+
 
